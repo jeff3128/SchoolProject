@@ -1,0 +1,58 @@
+		JButton btnNewButton = new JButton("OK");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				String Name=name.getText();
+				String Chi=chi.getText();
+				String Eng=eng.getText();
+				//Integer C=new Integer(Chi);
+				//Integer E=new Integer(Eng);
+
+				int C=Integer.parseInt(Chi); //包覆類別轉型為int
+				int E=Integer.parseInt(Eng); //包覆類別轉型為int
+				
+				
+				Student s=new Student(Name,C,E);
+				
+				output.setText("你的資料為:"+
+						"\n姓名:"+s.getName()+
+						"\n國文:"+s.getChi()+
+						"\n英文:"+s.getEng()+
+						"\n總分:"+s.getSum());
+				
+			}
+		});
+		btnNewButton.setBounds(10, 10, 49, 15);
+		panel_2.add(btnNewButton);
+
+--------------------------------------------------------
+btnNewButton.setBounds(10, 10, 49, 15);
+		panel_2.add(btnNewButton);
+		
+		JButton clear_Button = new JButton("清除");
+		clear_Button.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				String Name="";
+				String Chi="";
+				String Eng="";
+				name.setText(Name);
+				chi.setText(Chi);
+				eng.setText(Eng);
+				//Integer C=new Integer(Chi);
+				//Integer E=new Integer(Eng);
+
+				int C=Integer.parseInt(Chi); //包覆類別轉型為int
+				int E=Integer.parseInt(Eng); //包覆類別轉型為int
+				
+               Student s1=new Student(Name,C,E);
+               s1.setName(Name);
+               s1.setChi(0);
+			   s1.setEng(0);
+			  // output.setText(null);
+			   output.replaceRange();
+			}
+		});
+		clear_Button.setBounds(86, 8, 59, 19);
+		panel_2.add(clear_Button);
